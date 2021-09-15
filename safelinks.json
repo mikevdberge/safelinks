@@ -1,5 +1,5 @@
 {
-  "openapi": "3.1.0",
+  "openapi": "3.0.0",
   "info": {
     "title": "Get-SafeLinksDetailReport",
     "version": "1.0",
@@ -17,7 +17,7 @@
     "SafeLinksDetailReport/": {
       "parameters": [],
       "get": {
-        "summary": "Get User Info by User ID",
+        "summary": "Get Safelinks detailed report",
         "tags": [],
         "responses": {
           "200": {
@@ -73,17 +73,25 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "Allowed",
+                "Blocked",
+                "ClickedEvenBlocked",
+                "ClickedDuringScan"
+              ]
             },
             "in": "query",
-            "name": "action"
+            "name": "action",
+            "description": "The Action parameter filters the results by action. You can specify multiple values separated by commas."
           },
           {
             "schema": {
               "type": "string"
             },
             "in": "query",
-            "name": "appnamelist"
+            "name": "appnamelist",
+            "description": "You can enter multiple values separated by commas. If the values contain spaces or otherwise require quotation marks, use the following syntax: \"Value1\",\"Value2\",...\"ValueN\"."
           },
           {
             "schema": {
