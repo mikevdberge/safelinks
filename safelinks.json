@@ -25,7 +25,200 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/User"
+                  "type": "array",
+                  "description": "",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "PSComputerName",
+                      "RunspaceId",
+                      "PSShowComputerName",
+                      "Url",
+                      "RecipientAddress",
+                      "Organization",
+                      "MessageId",
+                      "MessageTraceId",
+                      "ClickId",
+                      "Clicked",
+                      "UrlBlocked",
+                      "UrlClicked",
+                      "WorkloadId",
+                      "Workload",
+                      "AppName",
+                      "SourceId",
+                      "Details",
+                      "ClickAction",
+                      "StartDate",
+                      "EndDate",
+                      "Index"
+                    ],
+                    "properties": {
+                      "PSComputerName": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "RunspaceId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "PSShowComputerName": {
+                        "type": "boolean"
+                      },
+                      "Url": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "RecipientAddress": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "Organization": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "MessageId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "MessageTraceId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "ClickId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "UserIP": {},
+                      "Clicked": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "UrlBlocked": {
+                        "type": "boolean"
+                      },
+                      "UrlClicked": {
+                        "type": "boolean"
+                      },
+                      "WorkloadId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "Workload": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "AppName": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "SourceId": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "Details": {
+                        "type": "string"
+                      },
+                      "ClickAction": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "StartDate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "EndDate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "Index": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "x-examples": {
+                    "example-1": [
+                      {
+                        "PSComputerName": "outlook.office365.com",
+                        "RunspaceId": "bae6a611-a27f-4af0-bbd9-9779f6082455",
+                        "PSShowComputerName": false,
+                        "Url": "https://emails.azure.microsoft.com/redirect/?destination=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Foverview%2Fcost-optimization%2F&p=bT1lNGViM2Y4Ny02MjFiLTRjNjEtYWEzNy1iYjg4YzUzMTc1OGQmcz00ODIwY2RiZC1mNWE2LTQzYTUtODU5ZS1jZmFiMDgzODFiNjcmdT1hZW8mbD1jb3N0LW9wdGltaXphdGlvbg%3D%3D",
+                        "RecipientAddress": "mikevdberge@qhsejobs.onmicrosoft.com",
+                        "Organization": "qhsejobs.onmicrosoft.com",
+                        "MessageId": "<410A7D48-4D3C-4944-BBBD-2B1A77998AA7@hxcore.ol>",
+                        "MessageTraceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
+                        "ClickId": "f53388d0-e5cc-463e-11a9-08d975e57ca7",
+                        "UserIP": null,
+                        "Clicked": "2021-09-12T12:04:35.311",
+                        "UrlBlocked": false,
+                        "UrlClicked": false,
+                        "WorkloadId": "00730a1a-3310-48ba-ab07-9ec288151649",
+                        "Workload": "Mail",
+                        "AppName": "Mail",
+                        "SourceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
+                        "Details": "",
+                        "ClickAction": "Allowed",
+                        "StartDate": "2021-09-09T00:00:00",
+                        "EndDate": "2021-09-16T00:00:00",
+                        "Index": 0
+                      }
+                    ]
+                  }
+                },
+                "examples": {
+                  "Get Detailed Report": {
+                    "value": [
+                      {
+                        "PSComputerName": "outlook.office365.com",
+                        "RunspaceId": "bae6a611-a27f-4af0-bbd9-9779f6082455",
+                        "PSShowComputerName": false,
+                        "Url": "https://emails.azure.microsoft.com/redirect/?destination=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Foverview%2Fcost-optimization%2F&p=bT1lNGViM2Y4Ny02MjFiLTRjNjEtYWEzNy1iYjg4YzUzMTc1OGQmcz00ODIwY2RiZC1mNWE2LTQzYTUtODU5ZS1jZmFiMDgzODFiNjcmdT1hZW8mbD1jb3N0LW9wdGltaXphdGlvbg%3D%3D",
+                        "RecipientAddress": "mikevdberge@qhsejobs.onmicrosoft.com",
+                        "Organization": "qhsejobs.onmicrosoft.com",
+                        "MessageId": "<410A7D48-4D3C-4944-BBBD-2B1A77998AA7@hxcore.ol>",
+                        "MessageTraceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
+                        "ClickId": "f53388d0-e5cc-463e-11a9-08d975e57ca7",
+                        "UserIP": null,
+                        "Clicked": "2021-09-12T12:04:35.311",
+                        "UrlBlocked": false,
+                        "UrlClicked": false,
+                        "WorkloadId": "00730a1a-3310-48ba-ab07-9ec288151649",
+                        "Workload": "Mail",
+                        "AppName": "Mail",
+                        "SourceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
+                        "Details": "",
+                        "ClickAction": "Allowed",
+                        "StartDate": "2021-09-09T00:00:00",
+                        "EndDate": "2021-09-16T00:00:00",
+                        "Index": 0
+                      },
+                      {
+                        "PSComputerName": "outlook.office365.com",
+                        "RunspaceId": "bae6a611-a27f-4af0-bbd9-9779f6082455",
+                        "PSShowComputerName": false,
+                        "Url": "https://emails.azure.microsoft.com/redirect/?destination=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2F%3FWT.mc_id%3DAzurefreeact_genstream_day0_azuredocumentation-emailo-rm&p=bT1lNGViM2Y4Ny02MjFiLTRjNjEtYWEzNy1iYjg4YzUzMTc1OGQmcz00ODIwY2RiZC1mNWE2LTQzYTUtODU5ZS1jZmFiMDgzODFiNjcmdT1hZW8mbD1henVyZQ%3D%3D",
+                        "RecipientAddress": "mikevdberge@qhsejobs.onmicrosoft.com",
+                        "Organization": "qhsejobs.onmicrosoft.com",
+                        "MessageId": "<410A7D48-4D3C-4944-BBBD-2B1A77998AA7@hxcore.ol>",
+                        "MessageTraceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
+                        "ClickId": "d3a8547f-e806-43d6-7b2c-08d975e56bd9",
+                        "UserIP": null,
+                        "Clicked": "2021-09-12T12:04:07.426",
+                        "UrlBlocked": false,
+                        "UrlClicked": false,
+                        "WorkloadId": "00730a1a-3310-48ba-ab07-9ec288151649",
+                        "Workload": "Mail",
+                        "AppName": "Mail",
+                        "SourceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
+                        "Details": "",
+                        "ClickAction": "Allowed",
+                        "StartDate": "2021-09-09T00:00:00",
+                        "EndDate": "2021-09-16T00:00:00",
+                        "Index": 1
+                      }
+                    ]
+                  }
                 }
               }
             }
