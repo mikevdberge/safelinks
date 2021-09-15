@@ -3,7 +3,6 @@
   "info": {
     "title": "SafeLinksDetailReport",
     "version": "1.0",
-    "summary": "Use the Get-SafeLinksDetailReport API to get detailed information about Safe Links results for the last 7 days",
     "contact": {
       "name": "Mike van den Berge"
     },
@@ -15,7 +14,7 @@
     }
   ],
   "paths": {
-    "SafeLinksDetailReport/": {
+    "/detailreport": {
       "parameters": [],
       "get": {
         "summary": "Get Safelinks detailed report",
@@ -27,8 +26,7 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/User"
-                },
-                "examples": {}
+                }
               }
             }
           },
@@ -37,7 +35,7 @@
           }
         },
         "operationId": "get-safellnksdetailreport",
-        "description": "",
+        "description": "Get Safelink detailed report",
         "parameters": [
           {
             "schema": {
@@ -99,17 +97,6 @@
         "title": "User",
         "type": "object",
         "description": "",
-        "examples": [
-          {
-            "id": 142,
-            "firstName": "Alice",
-            "lastName": "Smith",
-            "email": "alice.smith@gmail.com",
-            "dateOfBirth": "1997-10-31",
-            "emailVerified": true,
-            "signUpDate": "2019-08-24"
-          }
-        ],
         "properties": {
           "id": {
             "type": "integer",
