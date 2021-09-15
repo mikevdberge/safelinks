@@ -1,12 +1,13 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Get-SafeLinksDetailReport",
+    "title": "SafeLinksDetailReport",
     "version": "1.0",
     "summary": "Use the Get-SafeLinksDetailReport API to get detailed information about Safe Links results for the last 7 days",
     "contact": {
       "name": "Mike van den Berge"
-    }
+    },
+    "description": " Get SafeLinksDetailReport API returns detailed information about Safe Links results for the last 7 days."
   },
   "servers": [
     {
@@ -27,19 +28,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/User"
                 },
-                "examples": {
-                  "Get User Alice Smith": {
-                    "value": {
-                      "id": 142,
-                      "firstName": "Alice",
-                      "lastName": "Smith",
-                      "email": "alice.smith@gmail.com",
-                      "dateOfBirth": "1997-10-31",
-                      "emailVerified": true,
-                      "signUpDate": "2019-08-24"
-                    }
-                  }
-                }
+                "examples": {}
               }
             }
           },
