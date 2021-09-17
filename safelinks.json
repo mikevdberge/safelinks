@@ -76,6 +76,14 @@
             "in": "query",
             "name": "pagesize",
             "description": "The PageSize parameter specifies the maximum number of entries per page. Valid input for this parameter is an integer between 1 and 5000. The default value is 1000."
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "Ocp-Apim-Subscription-Key",
+            "description": "subscription-key"
           }
         ]
       }
