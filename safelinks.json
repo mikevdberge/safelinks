@@ -78,12 +78,26 @@
             "description": "The PageSize parameter specifies the maximum number of entries per page. Valid input for this parameter is an integer between 1 and 5000. The default value is 1000."
           },
           {
-            "schema": {
-              "type": "string"
-            },
-            "in": "header",
-            "name": "Ocp-Apim-Subscription-Key",
-            "description": "subscription-key"
+            "$ref": "#/components/parameters/Ocp-Apim-Subscription-Key"
+          }
+        ]
+      }
+    },
+    "/safelinksdetailreport": {
+      "get": {
+        "summary": "Get SafeLinksDetailReport",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-safelinksdetailreport",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Ocp-Apim-Subscription-Key"
+          },
+          {
+            "$ref": "#/components/parameters/startdate"
+          },
+          {
+            "$ref": "#/components/parameters/enddate"
           }
         ]
       }
@@ -180,6 +194,15 @@
           "type": "string"
         },
         "description": "The EndDate parameter specifies the end date of the date range.  Use the short date format that's defined in the Regional Options settings on the computer where you're running the command. For example, if the computer is configured to use the short date format mm/dd/yyyy, enter 09/01/2018 to specify September 1, 2018. You can enter the date only, or you can enter the date and time of day. If you enter the date and time of day, enclose the value in quotation marks (\"), for example, \"09/01/2018 5:00 PM\"."
+      },
+      "Ocp-Apim-Subscription-Key": {
+        "name": "Ocp-Apim-Subscription-Key",
+        "in": "header",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "description": "subscription-key"
       }
     }
   }
