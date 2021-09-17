@@ -49,30 +49,6 @@
           },
           {
             "schema": {
-              "type": "string",
-              "enum": [
-                "Allowed",
-                "Blocked",
-                "ClickedEvenBlocked",
-                "ClickedDuringScan"
-              ]
-            },
-            "in": "query",
-            "name": "action",
-            "description": "The Action parameter filters the results by action. You can specify multiple values separated by commas.",
-            "allowEmptyValue": true,
-            "allowReserved": true
-          },
-          {
-            "schema": {
-              "type": "string"
-            },
-            "in": "query",
-            "name": "appnamelist",
-            "description": "You can enter multiple values separated by commas. If the values contain spaces or otherwise require quotation marks, use the following syntax: \"Value1\",\"Value2\",...\"ValueN\"."
-          },
-          {
-            "schema": {
               "type": "string"
             },
             "in": "query",
