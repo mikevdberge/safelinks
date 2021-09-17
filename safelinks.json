@@ -18,7 +18,7 @@
     "/urltrace": {
       "parameters": [],
       "get": {
-        "summary": "Get Safelinks detailed report",
+        "summary": "Get UrlTrace",
         "tags": [],
         "responses": {
           "200": {
@@ -29,7 +29,7 @@
           }
         },
         "operationId": "get-safellnksdetailreport",
-        "description": "Get Safelink detailed report",
+        "description": "Get results of Safe Links actions in your cloud-based organization",
         "parameters": [
           {
             "$ref": "#/components/parameters/startdate"
