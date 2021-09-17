@@ -1,12 +1,12 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "SafeLinksDetailReport",
+    "title": "SafeLinks API",
     "version": "1.0",
     "contact": {
       "name": "Mike van den Berge"
     },
-    "description": " Get SafeLinksDetailReport API returns detailed information about Safe Links results for the last 7 days."
+    "description": "The SafeLinks API returns detailed information about Safe Links results for the last 7 days."
   },
   "servers": [
     {
