@@ -59,7 +59,8 @@
             },
             "in": "query",
             "name": "action",
-            "description": "The Action parameter filters the results by action. You can specify multiple values separated by commas."
+            "description": "The Action parameter filters the results by action. You can specify multiple values separated by commas.",
+            "allowEmptyValue": true
           },
           {
             "schema": {
