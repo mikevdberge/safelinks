@@ -123,7 +123,18 @@
           }
         },
         "operationId": "get-safelinksaggregatereport",
-        "description": "the SafeLinksAggregateReport API returns general information about Safe Links results for the last 90 days. Yesterday is the most recent date that you can specify."
+        "description": "the SafeLinksAggregateReport API returns general information about Safe Links results for the last 90 days. Yesterday is the most recent date that you can specify.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Ocp-Apim-Subscription-Key"
+          },
+          {
+            "$ref": "#/components/parameters/startdate"
+          },
+          {
+            "$ref": "#/components/parameters/enddate"
+          }
+        ]
       }
     }
   },
