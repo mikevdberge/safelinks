@@ -6,7 +6,8 @@
     "contact": {
       "name": "Mike van den Berge"
     },
-    "description": "The SafeLinks API returns detailed information about Safe Links results for the last 7 days."
+    "description": "The SafeLinks API returns detailed information about Safe Links results for the last 7 days.",
+    "x-logo": "https://www.patrickvanbemmelen.nl/storage/2020/11/DefenderForOffice365-1.png"
   },
   "servers": [
     {
@@ -240,5 +241,6 @@
         "description": "subscription-key"
       }
     }
-  }
+  },
+  "x-logo": "https://qhse-professionals.nl/wp-content/uploads/QHSE-Professionals-icon.jpg.webp"
 }
