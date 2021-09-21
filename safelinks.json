@@ -138,10 +138,11 @@
   "components": {
     "schemas": {},
     "securitySchemes": {
-      "Ocp-Apim-Subscription-Key": {
-        "name": "subscription key",
+      "Subscription key": {
+        "name": "Ocp-Apim-Subscription-Key",
         "type": "apiKey",
-        "in": "header"
+        "in": "header",
+        "description": "APIM Subscription key"
       }
     },
     "responses": {
