@@ -1,0 +1,521 @@
+{
+    "info": {
+        "_postman_id": "521dcfc7-32f5-4a74-a556-a06b06be137b",
+        "name": "SafeLinks API",
+        "description": "The SafeLinks API returns detailed information about Safe Links results for the last 7 days.\n\nContact Support:\n Name: Mike van den Berge",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get UrlTrace",
+            "id": "e752bff3-113f-4200-a6fa-e5bcbfbd6f88",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "description": "subscription-key",
+                        "key": "Ocp-Apim-Subscription-Key",
+                        "value": "sed nulla cillum"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/urltrace",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "urltrace"
+                    ],
+                    "query": [
+                        {
+                            "key": "startdate",
+                            "value": "",
+                            "description": "The StartDate parameter specifies the start date of the date range.  Use the short date format that's defined in the Regional Options settings on the computer where you're running the command. For example, if the computer is configured to use the short date format mm/dd/yyyy, enter 09/01/2018 to specify September 1, 2018. You can enter the date only, or you can enter the date and time of day. If you enter the date and time of day, enclose the value in quotation marks (\"), for example, \"09/01/2018 5:00 PM\".",
+                            "disabled": true
+                        },
+                        {
+                            "key": "enddate",
+                            "value": "",
+                            "description": "The EndDate parameter specifies the end date of the date range.  Use the short date format that's defined in the Regional Options settings on the computer where you're running the command. For example, if the computer is configured to use the short date format mm/dd/yyyy, enter 09/01/2018 to specify September 1, 2018. You can enter the date only, or you can enter the date and time of day. If you enter the date and time of day, enclose the value in quotation marks (\"), for example, \"09/01/2018 5:00 PM\".",
+                            "disabled": true
+                        },
+                        {
+                            "key": "recipientaddress",
+                            "value": "",
+                            "description": "The RecipientAddress parameter filters the results by the recipient's email address. You can specify multiple values separated by commas.",
+                            "disabled": true
+                        },
+                        {
+                            "key": "clickid",
+                            "value": "",
+                            "description": "The ClickId parameter filters the results by the URL that was scanned in the message. Each URL is represented as a GUID value.",
+                            "disabled": true
+                        },
+                        {
+                            "key": "urlordomain",
+                            "value": "",
+                            "description": "The UrlOrDomain parameter filters the results by the specified URL or domain value.  You can specify multiple values separated by commas.",
+                            "disabled": true
+                        },
+                        {
+                            "key": "workloads",
+                            "value": "",
+                            "description": "The Workloads parameter filters the results by the specified workload. Valid values are:  Mail OfficeClient Other",
+                            "disabled": true
+                        },
+                        {
+                            "key": "pagesize",
+                            "value": "",
+                            "description": "The PageSize parameter specifies the maximum number of entries per page. Valid input for this parameter is an integer between 1 and 5000. The default value is 1000.",
+                            "disabled": true
+                        }
+                    ]
+                },
+                "description": "Get results of Safe Links actions in your cloud-based organization"
+            },
+            "response": [
+                {
+                    "id": "35a92f99-1dee-4178-b68f-f7068a227040",
+                    "name": "Example response",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "description": "subscription-key",
+                                "key": "Ocp-Apim-Subscription-Key",
+                                "value": "sed nulla cillum"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{instance}}}}/urltrace",
+                            "host": [
+                                "{{instance}}}}"
+                            ],
+                            "path": [
+                                "urltrace"
+                            ],
+                            "query": [
+                                {
+                                    "key": "startdate",
+                                    "value": "",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "enddate",
+                                    "value": "",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "recipientaddress",
+                                    "value": "",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "clickid",
+                                    "value": "",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "urlordomain",
+                                    "value": "",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "workloads",
+                                    "value": "",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "pagesize",
+                                    "value": "",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "[{\n    \"PSComputerName\": \"outlook.office365.com\",\n    \"RunspaceId\": \"d79f4920-189b-4009-aba6-befce27503e0\",\n    \"PSShowComputerName\": false,\n    \"Url\": \"https://emails.azure.microsoft.com/redirect/?destination=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Ffree%2Ffree-account-faq%2F&p=bT1lNGViM2Y4Ny02MjFiLTRjNjEtYWEzNy1iYjg4YzUzMTc1OGQmcz00ODIwY2RiZC1mNWE2LTQzYTUtODU5ZS1jZmFiMDgzODFiNjcmdT1hZW8mbD1mcmVlLWFjY291bnQtZmFx\",\n    \"RecipientAddress\": \"mikevdberge@qhsejobs.onmicrosoft.com\",\n    \"Organization\": \"qhsejobs.onmicrosoft.com\",\n    \"MessageId\": \"<410A7D48-4D3C-4944-BBBD-2B1A77998AA7@hxcore.ol>\",\n    \"MessageTraceId\": \"688d5ac0-9f7a-4e05-f723-08d975e556b3\",\n    \"ClickId\": \"bce9c256-6129-49cd-ad0d-08d979e2ac52\",\n    \"UserIP\": null,\n    \"Clicked\": \"2021-09-17T13:54:31.412\",\n    \"UrlBlocked\": false,\n    \"UrlClicked\": false,\n    \"WorkloadId\": \"00730a1a-3310-48ba-ab07-9ec288151649\",\n    \"Workload\": \"Mail\",\n    \"AppName\": \"Mail\",\n    \"SourceId\": \"688d5ac0-9f7a-4e05-f723-08d975e556b3\",\n    \"Details\": \"\",\n    \"ClickAction\": \"Allowed\",\n    \"StartDate\": \"2021-09-14T12:50:54.0181621+00:00\",\n    \"EndDate\": \"2021-09-21T12:50:54.0250872+00:00\",\n    \"Index\": 0\n  }\n]"
+                },
+                {
+                    "id": "503409e0-2fff-4ed5-9bf4-83131b10a40e",
+                    "name": "No Content",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "description": "subscription-key",
+                                "key": "Ocp-Apim-Subscription-Key",
+                                "value": "sed nulla cillum"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/urltrace?startdate=sed nulla cillum&enddate=sed nulla cillum&recipientaddress=sed nulla cillum&clickid=sed nulla cillum&urlordomain=sed nulla cillum&workloads=sed nulla cillum&pagesize=sed nulla cillum",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "urltrace"
+                            ],
+                            "query": [
+                                {
+                                    "key": "startdate",
+                                    "value": "sed nulla cillum"
+                                },
+                                {
+                                    "key": "enddate",
+                                    "value": "sed nulla cillum"
+                                },
+                                {
+                                    "key": "recipientaddress",
+                                    "value": "sed nulla cillum"
+                                },
+                                {
+                                    "key": "clickid",
+                                    "value": "sed nulla cillum"
+                                },
+                                {
+                                    "key": "urlordomain",
+                                    "value": "sed nulla cillum"
+                                },
+                                {
+                                    "key": "workloads",
+                                    "value": "sed nulla cillum"
+                                },
+                                {
+                                    "key": "pagesize",
+                                    "value": "sed nulla cillum"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "No Content",
+                    "code": 204,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "text/plain"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": ""
+                }
+            ]
+        },
+        {
+            "name": "Get SafeLinksDetailReport",
+            "id": "e4747e99-f797-4a0e-825e-176dbfe95c44",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "description": "subscription-key",
+                        "key": "Ocp-Apim-Subscription-Key",
+                        "value": "sed nulla cillum"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/safelinksdetailreport?startdate=sed nulla cillum&enddate=sed nulla cillum",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "safelinksdetailreport"
+                    ],
+                    "query": [
+                        {
+                            "description": "The StartDate parameter specifies the start date of the date range.  Use the short date format that&#39;s defined in the Regional Options settings on the computer where you&#39;re running the command. For example, if the computer is configured to use the short date format mm/dd/yyyy, enter 09/01/2018 to specify September 1, 2018. You can enter the date only, or you can enter the date and time of day. If you enter the date and time of day, enclose the value in quotation marks (&quot;), for example, &quot;09/01/2018 5:00 PM&quot;.",
+                            "key": "startdate",
+                            "value": "sed nulla cillum"
+                        },
+                        {
+                            "description": "The EndDate parameter specifies the end date of the date range.  Use the short date format that&#39;s defined in the Regional Options settings on the computer where you&#39;re running the command. For example, if the computer is configured to use the short date format mm/dd/yyyy, enter 09/01/2018 to specify September 1, 2018. You can enter the date only, or you can enter the date and time of day. If you enter the date and time of day, enclose the value in quotation marks (&quot;), for example, &quot;09/01/2018 5:00 PM&quot;.",
+                            "key": "enddate",
+                            "value": "sed nulla cillum"
+                        }
+                    ]
+                },
+                "description": "The SafeLinksDetailReport API returns detailed information about Safe Links results for the last 7 days. Yesterday is the most recent date that you can specify."
+            },
+            "response": [
+                {
+                    "id": "b8f9e69c-1a9b-4218-896e-d9074ab3ce56",
+                    "name": "OK",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "description": "subscription-key",
+                                "key": "Ocp-Apim-Subscription-Key",
+                                "value": "sed nulla cillum"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/safelinksdetailreport?startdate=sed nulla cillum&enddate=sed nulla cillum",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "safelinksdetailreport"
+                            ],
+                            "query": [
+                                {
+                                    "key": "startdate",
+                                    "value": "sed nulla cillum"
+                                },
+                                {
+                                    "key": "enddate",
+                                    "value": "sed nulla cillum"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "text/plain"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": ""
+                },
+                {
+                    "id": "0b728c4b-af09-40e2-aa2c-310b80daeae3",
+                    "name": "No Content",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "description": "subscription-key",
+                                "key": "Ocp-Apim-Subscription-Key",
+                                "value": "sed nulla cillum"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/safelinksdetailreport?startdate=sed nulla cillum&enddate=sed nulla cillum",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "safelinksdetailreport"
+                            ],
+                            "query": [
+                                {
+                                    "key": "startdate",
+                                    "value": "sed nulla cillum"
+                                },
+                                {
+                                    "key": "enddate",
+                                    "value": "sed nulla cillum"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "No Content",
+                    "code": 204,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "text/plain"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": ""
+                }
+            ]
+        },
+        {
+            "name": "Get SafeLinksAggregateReport",
+            "id": "9d34e536-5289-4aa2-82f7-28cdf51d13d4",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "description": "subscription-key",
+                        "key": "Ocp-Apim-Subscription-Key",
+                        "value": "sed nulla cillum"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/safelinksaggregatereport?startdate=sed nulla cillum&enddate=sed nulla cillum",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "safelinksaggregatereport"
+                    ],
+                    "query": [
+                        {
+                            "description": "The StartDate parameter specifies the start date of the date range.  Use the short date format that&#39;s defined in the Regional Options settings on the computer where you&#39;re running the command. For example, if the computer is configured to use the short date format mm/dd/yyyy, enter 09/01/2018 to specify September 1, 2018. You can enter the date only, or you can enter the date and time of day. If you enter the date and time of day, enclose the value in quotation marks (&quot;), for example, &quot;09/01/2018 5:00 PM&quot;.",
+                            "key": "startdate",
+                            "value": "sed nulla cillum"
+                        },
+                        {
+                            "description": "The EndDate parameter specifies the end date of the date range.  Use the short date format that&#39;s defined in the Regional Options settings on the computer where you&#39;re running the command. For example, if the computer is configured to use the short date format mm/dd/yyyy, enter 09/01/2018 to specify September 1, 2018. You can enter the date only, or you can enter the date and time of day. If you enter the date and time of day, enclose the value in quotation marks (&quot;), for example, &quot;09/01/2018 5:00 PM&quot;.",
+                            "key": "enddate",
+                            "value": "sed nulla cillum"
+                        }
+                    ]
+                },
+                "description": "the SafeLinksAggregateReport API returns general information about Safe Links results for the last 90 days. Yesterday is the most recent date that you can specify."
+            },
+            "response": [
+                {
+                    "id": "8f38fee8-4b31-485b-94f5-7a78a7b4121d",
+                    "name": "OK",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "description": "subscription-key",
+                                "key": "Ocp-Apim-Subscription-Key",
+                                "value": "sed nulla cillum"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/safelinksaggregatereport?startdate=sed nulla cillum&enddate=sed nulla cillum",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "safelinksaggregatereport"
+                            ],
+                            "query": [
+                                {
+                                    "key": "startdate",
+                                    "value": "sed nulla cillum"
+                                },
+                                {
+                                    "key": "enddate",
+                                    "value": "sed nulla cillum"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "text/plain"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": ""
+                },
+                {
+                    "id": "ad7b6624-c034-40f9-941d-fa9b1bbf267a",
+                    "name": "No Content",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "description": "subscription-key",
+                                "key": "Ocp-Apim-Subscription-Key",
+                                "value": "sed nulla cillum"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/safelinksaggregatereport?startdate=sed nulla cillum&enddate=sed nulla cillum",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "safelinksaggregatereport"
+                            ],
+                            "query": [
+                                {
+                                    "key": "startdate",
+                                    "value": "sed nulla cillum"
+                                },
+                                {
+                                    "key": "enddate",
+                                    "value": "sed nulla cillum"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "No Content",
+                    "code": 204,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "text/plain"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": ""
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "apikey",
+        "apikey": [
+            {
+                "key": "key",
+                "value": "Ocp-Apim-Subscription-Key",
+                "type": "string"
+            },
+            {
+                "key": "value",
+                "value": "{{Ocp-Apim-Subscription-Key}}",
+                "type": "string"
+            }
+        ]
+    },
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "629fef2e-f193-4efa-8dd4-2a8e031f8979",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "c7cb28ce-7557-404f-8018-ae9c11d1fe70",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "id": "15fc8566-bd6a-4bb4-a436-0dfa6ca2955a",
+            "key": "baseUrl",
+            "value": "https://safelinks.azure-api.net",
+            "type": "any"
+        }
+    ]
+}
