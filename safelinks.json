@@ -4,7 +4,8 @@
     "title": "SafeLinks API",
     "version": "1.0",
     "contact": {
-      "name": "Mike van den Berge"
+      "name": "Mike van den Berge",
+      "email": "mikevdberge@qhse-professionals.nl"
     },
     "description": "The SafeLinks API returns detailed information about Safe Links results for the last 7 days.",
     "x-logo": "https://www.patrickvanbemmelen.nl/storage/2020/11/DefenderForOffice365-1.png"
@@ -12,7 +13,11 @@
   "servers": [
     {
       "url": "https://safelinks.azure-api.net",
-      "description": "Cloud"
+      "description": "Production"
+    },
+    {
+      "url": "http://localhost:3000",
+      "description": "Sandbox"
     }
   ],
   "paths": {
