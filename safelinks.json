@@ -235,5 +235,10 @@
       }
     }
   },
-  "x-logo": "https://qhse-professionals.nl/wp-content/uploads/QHSE-Professionals-icon.jpg.webp"
+  "x-logo": "https://qhse-professionals.nl/wp-content/uploads/QHSE-Professionals-icon.jpg.webp",
+  "security": [
+    {
+      "Ocp-Apim-Subscription-Key": []
+    }
+  ]
 }
