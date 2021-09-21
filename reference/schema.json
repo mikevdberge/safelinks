@@ -28,7 +28,7 @@
         "tags": [],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/detailreport"
+            "$ref": "#/components/responses/urltrace"
           },
           "204": {
             "description": "No Content"
@@ -82,9 +82,11 @@
             "in": "query",
             "name": "pagesize",
             "description": "The PageSize parameter specifies the maximum number of entries per page. Valid input for this parameter is an integer between 1 and 5000. The default value is 1000."
-          },
+          }
+        ],
+        "security": [
           {
-            "$ref": "#/components/parameters/Ocp-Apim-Subscription-Key"
+            "Subscription key": []
           }
         ]
       }
@@ -95,7 +97,7 @@
         "tags": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "$ref": "#/components/responses/urltrace"
           },
           "204": {
             "description": "No Content"
@@ -103,9 +105,6 @@
         },
         "operationId": "get-safelinksdetailreport",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Ocp-Apim-Subscription-Key"
-          },
           {
             "$ref": "#/components/parameters/startdate"
           },
@@ -122,7 +121,7 @@
         "tags": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "$ref": "#/components/responses/urltrace"
           },
           "204": {
             "description": "No Content"
@@ -131,9 +130,6 @@
         "operationId": "get-safelinksaggregatereport",
         "description": "the SafeLinksAggregateReport API returns general information about Safe Links results for the last 90 days. Yesterday is the most recent date that you can specify.",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Ocp-Apim-Subscription-Key"
-          },
           {
             "$ref": "#/components/parameters/startdate"
           },
@@ -146,34 +142,146 @@
   },
   "components": {
     "schemas": {},
-    "securitySchemes": {},
+    "securitySchemes": {
+      "Subscription key": {
+        "name": "Ocp-Apim-Subscription-Key",
+        "type": "apiKey",
+        "in": "header",
+        "description": "APIM Subscription key"
+      }
+    },
     "responses": {
-      "detailreport": {
+      "urltrace": {
         "description": "Example response",
         "content": {
           "application/json": {
             "schema": {
-              "properties": {
-                "id": {
-                  "type": "string"
+              "type": "array",
+              "description": "",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "required": [
+                  "PSComputerName",
+                  "RunspaceId",
+                  "PSShowComputerName",
+                  "Url",
+                  "RecipientAddress",
+                  "Organization",
+                  "MessageId",
+                  "MessageTraceId",
+                  "ClickId",
+                  "Clicked",
+                  "UrlBlocked",
+                  "UrlClicked",
+                  "WorkloadId",
+                  "Workload",
+                  "AppName",
+                  "SourceId",
+                  "Details",
+                  "ClickAction",
+                  "StartDate",
+                  "EndDate",
+                  "Index"
+                ],
+                "properties": {
+                  "PSComputerName": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "RunspaceId": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "PSShowComputerName": {
+                    "type": "boolean"
+                  },
+                  "Url": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "RecipientAddress": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "Organization": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "MessageId": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "MessageTraceId": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "ClickId": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "UserIP": {},
+                  "Clicked": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "UrlBlocked": {
+                    "type": "boolean"
+                  },
+                  "UrlClicked": {
+                    "type": "boolean"
+                  },
+                  "WorkloadId": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "Workload": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "AppName": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "SourceId": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "Details": {
+                    "type": "string"
+                  },
+                  "ClickAction": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "StartDate": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "EndDate": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "Index": {
+                    "type": "number"
+                  }
                 }
-              }
-            },
-            "examples": {
-              "Get Detailed Report": {
-                "value": [
+              },
+              "x-examples": {
+                "example-1": [
                   {
                     "PSComputerName": "outlook.office365.com",
-                    "RunspaceId": "bae6a611-a27f-4af0-bbd9-9779f6082455",
+                    "RunspaceId": "d79f4920-189b-4009-aba6-befce27503e0",
                     "PSShowComputerName": false,
-                    "Url": "https://emails.azure.microsoft.com/redirect/?destination=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Foverview%2Fcost-optimization%2F&p=bT1lNGViM2Y4Ny02MjFiLTRjNjEtYWEzNy1iYjg4YzUzMTc1OGQmcz00ODIwY2RiZC1mNWE2LTQzYTUtODU5ZS1jZmFiMDgzODFiNjcmdT1hZW8mbD1jb3N0LW9wdGltaXphdGlvbg%3D%3D",
+                    "Url": "https://emails.azure.microsoft.com/redirect/?destination=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Ffree%2Ffree-account-faq%2F&p=bT1lNGViM2Y4Ny02MjFiLTRjNjEtYWEzNy1iYjg4YzUzMTc1OGQmcz00ODIwY2RiZC1mNWE2LTQzYTUtODU5ZS1jZmFiMDgzODFiNjcmdT1hZW8mbD1mcmVlLWFjY291bnQtZmFx",
                     "RecipientAddress": "mikevdberge@qhsejobs.onmicrosoft.com",
                     "Organization": "qhsejobs.onmicrosoft.com",
                     "MessageId": "<410A7D48-4D3C-4944-BBBD-2B1A77998AA7@hxcore.ol>",
                     "MessageTraceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
-                    "ClickId": "f53388d0-e5cc-463e-11a9-08d975e57ca7",
+                    "ClickId": "bce9c256-6129-49cd-ad0d-08d979e2ac52",
                     "UserIP": null,
-                    "Clicked": "2021-09-12T12:04:35.311",
+                    "Clicked": "2021-09-17T13:54:31.412",
                     "UrlBlocked": false,
                     "UrlClicked": false,
                     "WorkloadId": "00730a1a-3310-48ba-ab07-9ec288151649",
@@ -182,36 +290,47 @@
                     "SourceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
                     "Details": "",
                     "ClickAction": "Allowed",
-                    "StartDate": "2021-09-09T00:00:00",
-                    "EndDate": "2021-09-16T00:00:00",
+                    "StartDate": "2021-09-14T12:50:54.0181621+00:00",
+                    "EndDate": "2021-09-21T12:50:54.0250872+00:00",
                     "Index": 0
                   },
                   {
                     "PSComputerName": "outlook.office365.com",
-                    "RunspaceId": "bae6a611-a27f-4af0-bbd9-9779f6082455",
+                    "RunspaceId": "d79f4920-189b-4009-aba6-befce27503e0",
                     "PSShowComputerName": false,
-                    "Url": "https://emails.azure.microsoft.com/redirect/?destination=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2F%3FWT.mc_id%3DAzurefreeact_genstream_day0_azuredocumentation-emailo-rm&p=bT1lNGViM2Y4Ny02MjFiLTRjNjEtYWEzNy1iYjg4YzUzMTc1OGQmcz00ODIwY2RiZC1mNWE2LTQzYTUtODU5ZS1jZmFiMDgzODFiNjcmdT1hZW8mbD1henVyZQ%3D%3D",
+                    "Url": "https://link.oneplus.com/u/gm.php?prm=WZKuJ7fl6o_783614670_2662140_426&_esuh=_11_3e038469a74cb12bef603cbf505ce1765c7a511962472c53e9ef601379330c13",
                     "RecipientAddress": "mikevdberge@qhsejobs.onmicrosoft.com",
                     "Organization": "qhsejobs.onmicrosoft.com",
-                    "MessageId": "<410A7D48-4D3C-4944-BBBD-2B1A77998AA7@hxcore.ol>",
-                    "MessageTraceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
-                    "ClickId": "d3a8547f-e806-43d6-7b2c-08d975e56bd9",
+                    "MessageId": "<B373454E-2822-49BE-85E6-A7F1C2692B17@hxcore.ol>",
+                    "MessageTraceId": "8729ddc9-5194-49bf-bc11-08d979e13fb5",
+                    "ClickId": "67a0e6d6-f79b-4520-e1ec-08d979e18bba",
                     "UserIP": null,
-                    "Clicked": "2021-09-12T12:04:07.426",
+                    "Clicked": "2021-09-17T13:46:27.499",
                     "UrlBlocked": false,
                     "UrlClicked": false,
                     "WorkloadId": "00730a1a-3310-48ba-ab07-9ec288151649",
                     "Workload": "Mail",
                     "AppName": "Mail",
-                    "SourceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
+                    "SourceId": "8729ddc9-5194-49bf-bc11-08d979e13fb5",
                     "Details": "",
                     "ClickAction": "Allowed",
-                    "StartDate": "2021-09-09T00:00:00",
-                    "EndDate": "2021-09-16T00:00:00",
+                    "StartDate": "2021-09-14T12:50:54.0181621+00:00",
+                    "EndDate": "2021-09-21T12:50:54.0250872+00:00",
                     "Index": 1
                   }
                 ]
               }
+            },
+            "examples": {
+              "UrlTrace Response": {
+                "$ref": "#/components/examples/UrlTrace"
+              }
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "type": "object",
+              "properties": {}
             }
           }
         }
@@ -235,17 +354,67 @@
           "type": "string"
         },
         "description": "The EndDate parameter specifies the end date of the date range.  Use the short date format that's defined in the Regional Options settings on the computer where you're running the command. For example, if the computer is configured to use the short date format mm/dd/yyyy, enter 09/01/2018 to specify September 1, 2018. You can enter the date only, or you can enter the date and time of day. If you enter the date and time of day, enclose the value in quotation marks (\"), for example, \"09/01/2018 5:00 PM\"."
-      },
-      "Ocp-Apim-Subscription-Key": {
-        "name": "Ocp-Apim-Subscription-Key",
-        "in": "header",
-        "required": false,
-        "schema": {
-          "type": "string"
-        },
-        "description": "subscription-key"
+      }
+    },
+    "examples": {
+      "UrlTrace": {
+        "value": [
+          {
+            "PSComputerName": "outlook.office365.com",
+            "RunspaceId": "d79f4920-189b-4009-aba6-befce27503e0",
+            "PSShowComputerName": false,
+            "Url": "https://emails.azure.microsoft.com/redirect/?destination=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Ffree%2Ffree-account-faq%2F&p=bT1lNGViM2Y4Ny02MjFiLTRjNjEtYWEzNy1iYjg4YzUzMTc1OGQmcz00ODIwY2RiZC1mNWE2LTQzYTUtODU5ZS1jZmFiMDgzODFiNjcmdT1hZW8mbD1mcmVlLWFjY291bnQtZmFx",
+            "RecipientAddress": "mikevdberge@qhsejobs.onmicrosoft.com",
+            "Organization": "qhsejobs.onmicrosoft.com",
+            "MessageId": "<410A7D48-4D3C-4944-BBBD-2B1A77998AA7@hxcore.ol>",
+            "MessageTraceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
+            "ClickId": "bce9c256-6129-49cd-ad0d-08d979e2ac52",
+            "UserIP": null,
+            "Clicked": "2021-09-17T13:54:31.412",
+            "UrlBlocked": false,
+            "UrlClicked": false,
+            "WorkloadId": "00730a1a-3310-48ba-ab07-9ec288151649",
+            "Workload": "Mail",
+            "AppName": "Mail",
+            "SourceId": "688d5ac0-9f7a-4e05-f723-08d975e556b3",
+            "Details": "",
+            "ClickAction": "Allowed",
+            "StartDate": "2021-09-14T12:50:54.0181621+00:00",
+            "EndDate": "2021-09-21T12:50:54.0250872+00:00",
+            "Index": 0
+          },
+          {
+            "PSComputerName": "outlook.office365.com",
+            "RunspaceId": "d79f4920-189b-4009-aba6-befce27503e0",
+            "PSShowComputerName": false,
+            "Url": "https://link.oneplus.com/u/gm.php?prm=WZKuJ7fl6o_783614670_2662140_426&_esuh=_11_3e038469a74cb12bef603cbf505ce1765c7a511962472c53e9ef601379330c13",
+            "RecipientAddress": "mikevdberge@qhsejobs.onmicrosoft.com",
+            "Organization": "qhsejobs.onmicrosoft.com",
+            "MessageId": "<B373454E-2822-49BE-85E6-A7F1C2692B17@hxcore.ol>",
+            "MessageTraceId": "8729ddc9-5194-49bf-bc11-08d979e13fb5",
+            "ClickId": "67a0e6d6-f79b-4520-e1ec-08d979e18bba",
+            "UserIP": null,
+            "Clicked": "2021-09-17T13:46:27.499",
+            "UrlBlocked": false,
+            "UrlClicked": false,
+            "WorkloadId": "00730a1a-3310-48ba-ab07-9ec288151649",
+            "Workload": "Mail",
+            "AppName": "Mail",
+            "SourceId": "8729ddc9-5194-49bf-bc11-08d979e13fb5",
+            "Details": "",
+            "ClickAction": "Allowed",
+            "StartDate": "2021-09-14T12:50:54.0181621+00:00",
+            "EndDate": "2021-09-21T12:50:54.0250872+00:00",
+            "Index": 1
+          }
+        ]
       }
     }
   },
-  "x-logo": "https://qhse-professionals.nl/wp-content/uploads/QHSE-Professionals-icon.jpg.webp"
+  "x-logo": "https://qhse-professionals.nl/wp-content/uploads/QHSE-Professionals-icon.jpg.webp",
+  "security": [
+    {
+      "Ocp-Apim-Subscription-Key": []
+    }
+  ]
 }
