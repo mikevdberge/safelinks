@@ -428,7 +428,7 @@
   "security": [
     {
       "Oauth": [
-        "Safelinks.ReadAll"
+        "api://42b3d96e-a89c-4710-b1ea-7e76f5ffa04a/.default"
       ]
     },
     {
