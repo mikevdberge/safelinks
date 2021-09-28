@@ -148,6 +148,19 @@
         "type": "apiKey",
         "in": "header",
         "description": "APIM Subscription key"
+      },
+      "Oauth": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://login.microsoftonline.com/d701c4f6-29bc-4a7f-ba8d-5c1289f632b9/oauth2/v2.0/authorize",
+            "tokenUrl": "https://login.microsoftonline.com/d701c4f6-29bc-4a7f-ba8d-5c1289f632b9/oauth2/v2.0/token",
+            "refreshUrl": "",
+            "scopes": {
+              "Safelinks.ReadAll" : "Read all safelinks"
+            }
+          }
+        }
       }
     },
     "responses": {
@@ -414,7 +427,10 @@
   "x-logo": "https://qhse-professionals.nl/wp-content/uploads/QHSE-Professionals-icon.jpg.webp",
   "security": [
     {
-      "Ocp-Apim-Subscription-Key": []
+      "Oauth": []
+    },
+    {
+      "Subscription key": []
     }
   ]
 }
