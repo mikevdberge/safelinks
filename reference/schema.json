@@ -86,6 +86,11 @@
         ],
         "security": [
           {
+            "Oauth": [
+              "api://42b3d96e-a89c-4710-b1ea-7e76f5ffa04a/.default"
+            ]
+          },
+          {
             "Subscription key": []
           }
         ]
@@ -112,7 +117,17 @@
             "$ref": "#/components/parameters/enddate"
           }
         ],
-        "description": "The SafeLinksDetailReport API returns detailed information about Safe Links results for the last 7 days. Yesterday is the most recent date that you can specify."
+        "description": "The SafeLinksDetailReport API returns detailed information about Safe Links results for the last 7 days. Yesterday is the most recent date that you can specify.",
+        "security": [
+          {
+            "Oauth": [
+              "api://42b3d96e-a89c-4710-b1ea-7e76f5ffa04a/.default"
+            ]
+          },
+          {
+            "Subscription key": []
+          }
+        ]
       }
     },
     "/safelinksaggregatereport": {
@@ -135,6 +150,16 @@
           },
           {
             "$ref": "#/components/parameters/enddate"
+          }
+        ],
+        "security": [
+          {
+            "Oauth": [
+              "api://42b3d96e-a89c-4710-b1ea-7e76f5ffa04a/.default"
+            ]
+          },
+          {
+            "Subscription key": []
           }
         ]
       }
